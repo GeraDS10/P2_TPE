@@ -1,6 +1,6 @@
 public class Nodo {
 
-    private Object objeto;
+    private Object objeto = null;
     private Nodo siguiente;
 
     public void insertarObjeto(Object o){
@@ -14,9 +14,7 @@ public class Nodo {
     public Nodo getSiguiente(){
         return this.siguiente;
     }
-    public boolean sosMenor(Object o){
 
-    }
 
     public Object getObjeto() {
         return this.objeto;
