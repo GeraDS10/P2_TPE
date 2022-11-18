@@ -28,4 +28,12 @@ public class Nodo {
     public Object getObjeto() {
         return this.objeto;
     }
+
+    @Override
+    public String toString() {
+        return "Nodo{" +
+                "objeto=" + objeto +
+                '}';
+    }
 }
+
