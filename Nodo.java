@@ -8,14 +8,6 @@ public class Nodo {
         this.siguiente = null;
     }
 
-    /*
-
-    public void insertarObjeto(Object o){
-        this.objeto = o;
-    }
-
-     */
-
     public void setSiguiente(Nodo sig){
         this.siguiente = sig;
     }

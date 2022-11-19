@@ -27,28 +27,20 @@ public class ListaVinculadaOrdenada {
             Nodo iterador = this.primero;
             Nodo siguiente = iterador.getSiguiente();
             Nodo anterior = null;
-            //if (this.comparador.compare(iterador.getObjeto(), siguiente.getObjeto()) < 0) {
             if (this.comparador.compare(siguiente.getObjeto(), iterador.getObjeto()) < 0) {
                 iterador.setSiguiente(siguiente.getSiguiente());
                 siguiente.setSiguiente(iterador);
                 this.setPrimero(siguiente);
                 anterior = siguiente;
                 siguiente = iterador.getSiguiente();
-                //System.out.println("cambia el primero");
             }
             else{
-                //System.out.println("No cambia");
                 anterior = iterador;
                 iterador = siguiente;
                 siguiente = siguiente.getSiguiente();
             }
             while (siguiente != null){
-                  //System.out.println(anterior.getObjeto());
-                    //System.out.println(iterador.getObjeto());
-                    //System.out.println(siguiente.getObjeto());
-                    //if(this.comparador.compare(iterador.getObjeto(), siguiente.getObjeto()) < 0){
                 if(this.comparador.compare(siguiente.getObjeto(), iterador.getObjeto()) < 0){
-                  //      System.out.println("Corrimiento");
                         anterior.setSiguiente(siguiente);
                         iterador.setSiguiente(siguiente.getSiguiente());
                         siguiente.setSiguiente(iterador);
@@ -57,12 +49,10 @@ public class ListaVinculadaOrdenada {
                         corrimientos++;
                     }
                     else {
-                     //   System.out.println("Avanzando");
                         anterior = iterador;
                         iterador = siguiente;
                         siguiente = siguiente.getSiguiente();
                     }
-
                 }
                 if(corrimientos != 0){
                     ordenarLista();
@@ -102,10 +92,8 @@ public class ListaVinculadaOrdenada {
 
     public void obtenerPosicion(Object o){
         int posicionActual = 0;
-        //Nodo anterior = this.primero;
         Nodo iterador = this.primero;
         while ((iterador.getSiguiente() != null) && (!iterador.getObjeto().equals(o))){
-           // anterior = iterador;
             iterador = iterador.getSiguiente();
             posicionActual++;
         }
@@ -172,42 +160,7 @@ public class ListaVinculadaOrdenada {
         else{
             nuevo.setSiguiente(this.primero);
             this.primero = nuevo;
-            /*
-            Nodo iterador = this.primero;
-            while (iterador.getSiguiente() != null) {
-                iterador = iterador.getSiguiente();
-            }
-            iterador.setSiguiente(nuevo);
-
-             */
         }
         this.ordenarLista();
-            /*
-            if(this.comparador.comparar(o, this.primero.getObjeto()) <= 0){
-                nuevo.setSiguiente(primero);
-                primero = nuevo;
-            }
-            else if(this.primero.getSiguiente() != null){
-                Nodo atras = this.primero;
-                Nodo adelante = this.primero.getSiguiente();
-                while((this.comparador.comparar(adelante.getObjeto(), o) <= 0) && (adelante.getSiguiente() != null)){
-                    atras = adelante;
-                    adelante = adelante.getSiguiente();
-                }
-                //if( this.ordenador.esMenor(o, adelante.getObjeto())){
-                    //adelante.setSiguiente(nuevo);
-                if(this.comparador.comparar(o, adelante.getObjeto()) <= 0){
-                    atras.setSiguiente(nuevo);
-                    nuevo.setSiguiente(adelante);
-                }
-                else{
-                    adelante.setSiguiente(nuevo);
-                }
-            }
-            else{
-                this.primero.setSiguiente(nuevo);
-            }
-            */
-       //}
   }
 }

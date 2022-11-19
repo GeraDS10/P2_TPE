@@ -1,13 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
+        /*   Punto 4
+
         ComparadorCantidad cc = new ComparadorCantidad();
         ComparadorEUString ceus = new ComparadorEUString();
         ListaVinculadaOrdenada universidad = new ListaVinculadaOrdenada(cc);
 
+        //Unicen
 
         //Humanas
-
         //Hmanas - Historia
         Alumno a1 = new Alumno("Flora", "Rivas", 34555111);
         a1.addInteres("historia");
@@ -22,9 +24,7 @@ public class Main {
         historia.addElemento(a1);
         historia.addElemento(a2);
         historia.addElemento(a3);
-        historia.getLista().imprimirLista();
-        //System.out.println("Total = " + historia.getCantidad());
-
+        //historia.getLista().imprimirLista();
 
         //Humanas - Libre
         Alumno a4 = new Alumno("Mora", "Diaz", 37124455);
@@ -35,12 +35,7 @@ public class Main {
         humanas.addElemento(historia);
         humanas.addElemento(a1);
 
-        System.out.println("Cantidad alumnos Humanas = " + humanas.getCantidad());
-
-
-
-
- // Exactas
+        // Exactas
         Alumno a5 = new Alumno("Federico", "Lopez", 35999888);
         a5.addInteres("redes");
         a5.addInteres("php");
@@ -55,9 +50,6 @@ public class Main {
         exactas.addElemento(a5);
         exactas.addElemento(a6);
 
-        System.out.println("Cantidad alumnos Exactas = " + exactas.getCantidad());
-
-
         //Libre
         Alumno a7 = new Alumno("John", "Doe", 1200000);
         a7.addInteres("intercambio");
@@ -67,12 +59,11 @@ public class Main {
         unicen.addElemento(exactas);
         unicen.addElemento(humanas);
         unicen.addElemento(a7);
-        unicen.getLista().imprimirLista();
 
         universidad.insertar(unicen);
         System.out.println("Cantidad alumnos Unicen = " + unicen.getCantidad());
 
-        // Segunda parte punto 4, inciso i)
+        //Olimpiadas Matematicas
 
         Alumno a8 = new Alumno("Bernardino", "Rivas", 30987654);
         a8.addInteres("matemáticas");
@@ -100,17 +91,11 @@ public class Main {
         GrupoAlumnos olimpiadasMatematicas = new GrupoAlumnos("Olimpiadas Matematicas", ceus);
         olimpiadasMatematicas.addElemento(losFibo);
         olimpiadasMatematicas.addElemento(matea2);
+        System.out.println("Cantidad alumnos Olimpiadas Matematicas = " + olimpiadasMatematicas.getCantidad());
 
         universidad.insertar(olimpiadasMatematicas);
         universidad.imprimirLista();
-
-
-
-
-
-
-
-
+         ---------------------------------------------------------------------------- */
 
         /*
         Punto 4, inciso d) e) f) g)
@@ -133,6 +118,7 @@ public class Main {
         listaStrings.setComparador(csr);
         listaStrings.imprimirLista();
 
+         ------------------------------------------------------------------------------------------------
          */
 
 

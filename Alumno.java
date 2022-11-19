@@ -28,20 +28,6 @@ public class Alumno extends ElementoUniversidad{
         return 1;
     }
 
-    /*
-    public ListaVinculadaOrdenada getIntereses(){
-        ListaVinculadaOrdenada nueva = new ListaVinculadaOrdenada();
-        Nodo n = intereses.getPrimero();
-        for (int i = 0; i < intereses.obtenerCantidadElementos(); i++){
-            nueva.insertar(n.getObjeto());
-            n = n.getSiguiente();
-        }
-        return nueva;
-    }
-
-     */
-
-
     public String getNombre() {
         return super.getNombre();
     }
