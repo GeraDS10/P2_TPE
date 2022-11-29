@@ -5,9 +5,10 @@ public class Alumno extends ElementoUniversidad{
 
     private String apellido;
     private int dni;
+    private int edad;
     private ArrayList intereses;
 
-    public Alumno(String nombre, String apellido, int dni) {
+    public Alumno(String nombre, String apellido,int edad, int dni) {
         super(nombre);
         this.apellido = apellido;
         this.dni = dni;
@@ -15,8 +16,9 @@ public class Alumno extends ElementoUniversidad{
     }
 
     public void addInteres(String interes){
-
-        this.intereses.add(interes);
+        if(!this.intereses.contains(interes)){
+            this.intereses.add(interes);
+        }
     }
 
     public ArrayList getIntereses(){
@@ -28,16 +30,22 @@ public class Alumno extends ElementoUniversidad{
         return 1;
     }
 
-    public String getNombre() {
-        return super.getNombre();
-    }
-
     public String getApellido() {
         return apellido;
     }
 
     public int getDni() {
         return dni;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        try{
+            Alumno otro = (Alumno) o;
+            return (this.dni == ((Alumno) o).getDni());
+        }catch (Exception e){
+            return false;
+        }
     }
 
     @Override

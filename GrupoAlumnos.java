@@ -3,19 +3,19 @@ import java.util.Comparator;
 
 public class GrupoAlumnos extends ElementoUniversidad{
 
-    private ListaVinculadaOrdenada lista;
-    public GrupoAlumnos(String nombre, Comparator comparador){
+    private ArrayList<ElementoUniversidad> lista;
+    public GrupoAlumnos(String nombre){
         super(nombre);
-        lista = new ListaVinculadaOrdenada(comparador);
-
+        lista = new ArrayList<ElementoUniversidad>();
     }
-
     public void addElemento(ElementoUniversidad eu){
-        lista.insertar(eu);
+        if(!this.lista.contains(eu)){
+            lista.add(eu);
+        }
     }
 
-    public ListaVinculadaOrdenada getLista(){
-        return this.lista;
+    public ArrayList getListaAlumos(){
+        return new ArrayList<>(this.lista);
     }
 
     @Override
@@ -25,22 +25,11 @@ public class GrupoAlumnos extends ElementoUniversidad{
 
     @Override
     public int getCantidad() {
-        int i = 0;
         int total = 0;
-        if(this.lista.getPrimero() != null){
-            Nodo iterador = this.lista.getPrimero();
-            int cantidad = lista.getCantidadElementos();
-            while(i < cantidad){
-                ElementoUniversidad eu = (ElementoUniversidad) iterador.getObjeto();
-                total += eu.getCantidad();
-                iterador = iterador.getSiguiente();
-                i++;
-            }
-            return total;
+        for (ElementoUniversidad eu: this.lista
+             ) {
+            total += eu.getCantidad();
         }
-        else {
-            return total;
-        }
-
+        return total;
     }
 }

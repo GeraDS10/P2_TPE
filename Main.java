@@ -1,5 +1,51 @@
 public class Main {
     public static void main(String[] args) {
+        ComparadorInteger ci = new ComparadorInteger();
+        ComparadorIntegerReverse cir = new ComparadorIntegerReverse();
+        ListaVinculadaOrdenada lista = new ListaVinculadaOrdenada(cir);
+        lista.insertar(1);
+        lista.insertar(12);
+        lista.insertar(8);
+        lista.insertar(3);
+        lista.insertar(5);
+        lista.insertar(3);
+        lista.insertar(1);
+        lista.imprimirLista();
+
+        System.out.println(" ");
+        lista.setComparador(ci);
+        //lista.imprimirLista();
+
+
+        for (Nodo n:lista
+             ) {
+            System.out.println("Nodo -"+ n);
+        }
+
+        GrupoAlumnos g1 =new GrupoAlumnos("Cascas");
+        GrupoAlumnos g2 =new GrupoAlumnos("Cascasa");
+        System.out.println("Cantidad alumnos: "+ g1.getCantidad());
+        Alumno a1 = new Alumno("Juan", "Perez",20, 12345678);
+        Alumno a2 = new Alumno("Juan", "Perez",20, 12345679);
+        Alumno a3 = new Alumno("Juan", "Perez",20, 12345677);
+        Alumno a4 = new Alumno("Juan", "Perez",20, 12345676);
+        Alumno a5 = new Alumno("Juan", "Perez",20, 12345675);
+        g1.addElemento(a1);
+        g1.addElemento(a2);
+        g1.addElemento(a3);
+        g1.addElemento(a4);
+        g1.addElemento(a5);
+        g2.addElemento(g1);
+        Alumno a6 = new Alumno("Juan", "Perez",20, 12345633);
+        g2.addElemento(a6);
+        System.out.println("Cantidad alumnos: "+ g1.getCantidad());
+        System.out.println("Cantidad alumnos: "+ g2.getCantidad());
+
+
+
+
+
+
 
         /*   Punto 4
 

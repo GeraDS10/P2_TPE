@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class ComparadorEnterosDescendente implements Comparator<Integer> {
+public class ComparadorInteger implements Comparator<Integer> {
 
     @Override
     public int compare(Integer o1, Integer o2) {

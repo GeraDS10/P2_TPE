@@ -1,6 +1,7 @@
 import java.util.Comparator;
+import java.util.Iterator;
 
-public class ListaVinculadaOrdenada {
+public class ListaVinculadaOrdenada implements Iterable<Nodo> {
 
     private Nodo primero = null;
     private Comparator comparador;
@@ -90,7 +91,7 @@ public class ListaVinculadaOrdenada {
 
     }
 
-    public void obtenerPosicion(Object o){
+    public int obtenerPosicion(Object o){
         int posicionActual = 0;
         Nodo iterador = this.primero;
         while ((iterador.getSiguiente() != null) && (!iterador.getObjeto().equals(o))){
@@ -98,10 +99,10 @@ public class ListaVinculadaOrdenada {
             posicionActual++;
         }
         if(iterador.getObjeto().equals(o)){
-            System.out.println("Objeto encontrado en posicion: " + posicionActual);
+            return posicionActual;
         }
         else{
-            System.out.println("Objeto no encontrado");
+            return -1;
         }
     }
     public void eliminarPosicion(int pos){
@@ -156,11 +157,59 @@ public class ListaVinculadaOrdenada {
         Nodo nuevo = new Nodo(o);
         if (this.primero == null){
             this.primero = nuevo;
-        }
-        else{
+        }else if(this.comparador.compare(this.primero.getObjeto(), nuevo.getObjeto()) > 0){
             nuevo.setSiguiente(this.primero);
             this.primero = nuevo;
         }
-        this.ordenarLista();
+        else if(this.primero.getSiguiente() != null){
+            Nodo anterior = this.primero;
+            Nodo iterador = this.primero.getSiguiente();
+            while ((iterador != null)&&(this.comparador.compare(iterador.getObjeto(), nuevo.getObjeto()) < 0)){
+                anterior = iterador;
+                iterador = iterador.getSiguiente();
+            }
+            if(iterador == null){
+                anterior.setSiguiente(nuevo);
+            }else{
+                anterior.setSiguiente(nuevo);
+                nuevo.setSiguiente(iterador);
+            }
+            //nuevo.setSiguiente(this.primero);
+            //this.primero = nuevo;
+        }
+        else{
+            this.primero.setSiguiente(nuevo);
+        }
+        //this.ordenarLista();
   }
+
+  public Nodo obtenerEnPosicion(int pos){
+        int posicionActual = 0;
+        Nodo iterador = this.primero;
+        while((pos != posicionActual)&&(iterador != null)){
+            iterador = iterador.getSiguiente();
+            posicionActual++;
+        }
+        return iterador;
+  }
+
+
+    @Override
+    public Iterator<Nodo> iterator() {
+        return new IteratorNodo();
+    }
+
+    private class IteratorNodo implements Iterator<Nodo>{
+        private int pos = 0;
+        @Override
+        public boolean hasNext() {
+            return pos < getCantidadElementos();
+        }
+
+        @Override
+        public Nodo next() {
+            pos++;
+            return obtenerEnPosicion(pos-1);
+        }
+    }
 }
