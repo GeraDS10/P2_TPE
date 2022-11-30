@@ -61,19 +61,6 @@ public class ListaVinculadaOrdenada implements Iterable<Nodo> {
         }
     }
 
-    public void imprimirLista(){
-        if(this.primero != null){
-            int posicionActual = 0;
-            Nodo iterador = this.primero;
-            System.out.println(iterador.getObjeto() + " en posicion " + posicionActual);
-            while(iterador.getSiguiente() != null){
-                iterador = iterador.getSiguiente();
-                posicionActual++;
-                System.out.println(iterador.getObjeto() + " en posicion " + posicionActual);
-            }
-        }
-    }
-
     public int getCantidadElementos(){
         int cantidad = 0;
         if(this.primero != null){
@@ -192,7 +179,6 @@ public class ListaVinculadaOrdenada implements Iterable<Nodo> {
         }
         return iterador;
   }
-
 
     @Override
     public Iterator<Nodo> iterator() {

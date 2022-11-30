@@ -8,7 +8,7 @@ public class Alumno extends ElementoUniversidad{
     private int edad;
     private ArrayList intereses;
 
-    public Alumno(String nombre, String apellido,int edad, int dni) {
+    public Alumno(String nombre, String apellido, int dni) {
         super(nombre);
         this.apellido = apellido;
         this.dni = dni;
@@ -16,8 +16,8 @@ public class Alumno extends ElementoUniversidad{
     }
 
     public void addInteres(String interes){
-        if(!this.intereses.contains(interes)){
-            this.intereses.add(interes);
+        if(!this.intereses.contains(interes.toLowerCase())){
+            this.intereses.add(interes.toLowerCase());
         }
     }
 
@@ -38,6 +38,10 @@ public class Alumno extends ElementoUniversidad{
         return dni;
     }
 
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     @Override
     public boolean equals(Object o) {
         try{
@@ -50,10 +54,9 @@ public class Alumno extends ElementoUniversidad{
 
     @Override
     public String toString() {
-        return "Alumno{" +
-                "nombre='" + this.getNombre() + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", dni=" + dni +
+        return "Alumno: " + this.getNombre() + '\'' +
+                ", " + apellido + '\'' +
+                ", " + dni +
                 '}';
     }
 }

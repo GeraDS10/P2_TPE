@@ -20,7 +20,7 @@ public class GrupoAlumnos extends ElementoUniversidad{
 
     @Override
     public String toString() {
-        return "GrupoAlumnos = " + this.getNombre();
+        return "Grupo: " + this.getNombre() + "\n  Cantidad alumnos = " + this.getCantidad();
     }
 
     @Override

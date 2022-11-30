@@ -1,56 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        ComparadorInteger ci = new ComparadorInteger();
-        ComparadorIntegerReverse cir = new ComparadorIntegerReverse();
-        ListaVinculadaOrdenada lista = new ListaVinculadaOrdenada(cir);
-        lista.insertar(1);
-        lista.insertar(12);
-        lista.insertar(8);
-        lista.insertar(3);
-        lista.insertar(5);
-        lista.insertar(3);
-        lista.insertar(1);
-        lista.imprimirLista();
 
-        System.out.println(" ");
-        lista.setComparador(ci);
-        //lista.imprimirLista();
+        /*
 
-
-        for (Nodo n:lista
-             ) {
-            System.out.println("Nodo -"+ n);
-        }
-
-        GrupoAlumnos g1 =new GrupoAlumnos("Cascas");
-        GrupoAlumnos g2 =new GrupoAlumnos("Cascasa");
-        System.out.println("Cantidad alumnos: "+ g1.getCantidad());
-        Alumno a1 = new Alumno("Juan", "Perez",20, 12345678);
-        Alumno a2 = new Alumno("Juan", "Perez",20, 12345679);
-        Alumno a3 = new Alumno("Juan", "Perez",20, 12345677);
-        Alumno a4 = new Alumno("Juan", "Perez",20, 12345676);
-        Alumno a5 = new Alumno("Juan", "Perez",20, 12345675);
-        g1.addElemento(a1);
-        g1.addElemento(a2);
-        g1.addElemento(a3);
-        g1.addElemento(a4);
-        g1.addElemento(a5);
-        g2.addElemento(g1);
-        Alumno a6 = new Alumno("Juan", "Perez",20, 12345633);
-        g2.addElemento(a6);
-        System.out.println("Cantidad alumnos: "+ g1.getCantidad());
-        System.out.println("Cantidad alumnos: "+ g2.getCantidad());
-
-
-
-
-
-
-
-        /*   Punto 4
+        //   Punto 4
 
         ComparadorCantidad cc = new ComparadorCantidad();
-        ComparadorEUString ceus = new ComparadorEUString();
         ListaVinculadaOrdenada universidad = new ListaVinculadaOrdenada(cc);
 
         //Unicen
@@ -66,18 +21,17 @@ public class Main {
         a2.addInteres("griegos");
         Alumno a3 = new Alumno("Roman", "Bazan", 32555111);
         a3.addInteres("argentina");
-        GrupoAlumnos historia = new GrupoAlumnos("Historia", ceus);
+        GrupoAlumnos historia = new GrupoAlumnos("Historia");
         historia.addElemento(a1);
         historia.addElemento(a2);
         historia.addElemento(a3);
-        //historia.getLista().imprimirLista();
 
         //Humanas - Libre
         Alumno a4 = new Alumno("Mora", "Diaz", 37124455);
         a4.addInteres("psicologia");
         a4.addInteres("Freud");
 
-        GrupoAlumnos humanas = new GrupoAlumnos("Humanas", ceus);
+        GrupoAlumnos humanas = new GrupoAlumnos("Humanas");
         humanas.addElemento(historia);
         humanas.addElemento(a1);
 
@@ -92,7 +46,7 @@ public class Main {
         a6.addInteres("php");
         a6.addInteres("java");
 
-        GrupoAlumnos exactas = new GrupoAlumnos("Exactas", ceus);
+        GrupoAlumnos exactas = new GrupoAlumnos("Exactas");
         exactas.addElemento(a5);
         exactas.addElemento(a6);
 
@@ -101,13 +55,12 @@ public class Main {
         a7.addInteres("intercambio");
 
 
-        GrupoAlumnos unicen = new GrupoAlumnos("Unicen", cc);
+        GrupoAlumnos unicen = new GrupoAlumnos("Unicen");
         unicen.addElemento(exactas);
         unicen.addElemento(humanas);
         unicen.addElemento(a7);
 
         universidad.insertar(unicen);
-        System.out.println("Cantidad alumnos Unicen = " + unicen.getCantidad());
 
         //Olimpiadas Matematicas
 
@@ -118,7 +71,7 @@ public class Main {
         Alumno a10 = new Alumno("Isaac", "Newton", 12343565);
         a10.addInteres("sucesiones");
 
-        GrupoAlumnos losFibo = new GrupoAlumnos("LosFibo", ceus);
+        GrupoAlumnos losFibo = new GrupoAlumnos("LosFibo");
         losFibo.addElemento(a8);
         losFibo.addElemento(a9);
         losFibo.addElemento(a10);
@@ -130,23 +83,27 @@ public class Main {
         a12.addInteres("sucesiones");
         a12.addInteres("algebra");
 
-        GrupoAlumnos matea2 = new GrupoAlumnos("Matea2", ceus);
+        GrupoAlumnos matea2 = new GrupoAlumnos("Matea2");
         matea2.addElemento(a11);
         matea2.addElemento(a12);
 
-        GrupoAlumnos olimpiadasMatematicas = new GrupoAlumnos("Olimpiadas Matematicas", ceus);
+        GrupoAlumnos olimpiadasMatematicas = new GrupoAlumnos("Olimpiadas Matematicas");
         olimpiadasMatematicas.addElemento(losFibo);
         olimpiadasMatematicas.addElemento(matea2);
-        System.out.println("Cantidad alumnos Olimpiadas Matematicas = " + olimpiadasMatematicas.getCantidad());
 
         universidad.insertar(olimpiadasMatematicas);
-        universidad.imprimirLista();
-         ---------------------------------------------------------------------------- */
+        for (Nodo n: universidad
+             ) {
+            System.out.println(n.getObjeto());
+        }
+
+         */
+
+         //----------------------------------------------------------------------------
 
         /*
-        Punto 4, inciso d) e) f) g)
 
-
+        // Punto 4, inciso d) e) f) g)
 
         ComparadorString cs = new ComparadorString();
         ListaVinculadaOrdenada listaStrings = new ListaVinculadaOrdenada(cs);
@@ -154,43 +111,61 @@ public class Main {
         listaStrings.insertar("Es");
         listaStrings.insertar("Parcial");
         listaStrings.insertar("Prog 2");
-        listaStrings.imprimirLista();
-        System.out.println("Buscar posición parcial");
-        listaStrings.obtenerPosicion("Parcial");
-        System.out.println("Posición recuperatorio");
-        listaStrings.obtenerPosicion("recuperatorio");
-        ComparadorStringsReverse csr = new ComparadorStringsReverse();
-        System.out.println("Invirtiendo orden");
-        listaStrings.setComparador(csr);
-        listaStrings.imprimirLista();
+        for (Nodo n: listaStrings
+             ) {
+            System.out.println(n.getObjeto());
+        }
+        int posicionParcial = listaStrings.obtenerPosicion("Parcial");
+        if(posicionParcial != -1){
+            System.out.println("Parcial se encuentra en la posicion = " + listaStrings.obtenerPosicion("Parcial"));
+        }
+        else {
+            System.out.println("Parcial no se encuentra en la lista");
+        }
+        int posicionRecuperatorio = listaStrings.obtenerPosicion("Recuperatorio");
+        if(posicionRecuperatorio != -1){
+            System.out.println("Recuperatorio se encuentra en la posicion = " + listaStrings.obtenerPosicion("Recuperatorio"));
+        }
+        else {
+            System.out.println("Recuperatorio no se encuentra en la lista");
+        }
 
-         ------------------------------------------------------------------------------------------------
+        ComparadorInverso ci = new ComparadorInverso(cs);
+        listaStrings.setComparador(ci);
+        System.out.println("Invirtiendo orden");
+        for (Nodo n: listaStrings
+        ) {
+            System.out.println(n.getObjeto());
+        }
+
          */
+
+         //------------------------------------------------------------------------------------------------
 
 
         /*
-        Punto 4, incisos a) b) c)
 
-        ComparadorEnterosDescendente ced = new ComparadorEnterosDescendente();
-        ListaVinculadaOrdenada listaNumeros = new ListaVinculadaOrdenada(ced);
-        listaNumeros.insertar(10);
-        listaNumeros.insertar(21);
-        listaNumeros.insertar(1);
-        listaNumeros.insertar(5);
-        listaNumeros.insertar(11);
-        listaNumeros.imprimirLista();
-        System.out.println("Ordenando");
-        listaNumeros.setComparador(ced);
-        listaNumeros.imprimirLista();
-        listaNumeros.eliminarPosicion(0);
-        System.out.println("Borrando");
-        listaNumeros.imprimirLista();
-        listaNumeros.eliminarObjeto(5);
-        System.out.println("Borrando 5");
-        listaNumeros.imprimirLista();
-        listaNumeros.eliminarObjeto(11);
-        System.out.println("Borrando 11");
-        listaNumeros.imprimirLista();
+        //Punto 4, incisos a) b) c)
+
+        ComparadorInteger ci = new ComparadorInteger();
+        ListaVinculadaOrdenada listaInteger = new ListaVinculadaOrdenada(ci);
+        listaInteger.insertar(10);
+        listaInteger.insertar(21);
+        listaInteger.insertar(1);
+        listaInteger.insertar(5);
+        listaInteger.insertar(11);
+        for (Nodo n:listaInteger
+        ) {
+            System.out.println(n.getObjeto());
+        }
+        listaInteger.eliminarPosicion(0);
+        listaInteger.eliminarObjeto(5);
+        listaInteger.eliminarObjeto(11);
+        System.out.println("");
+        for (Nodo n:listaInteger
+        ) {
+            System.out.println(n.getObjeto());
+        }
 
          */
     }
